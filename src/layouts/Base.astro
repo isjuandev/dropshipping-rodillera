@@ -1,0 +1,176 @@
+---
+import '../styles/global.css';
+import { tiendaConfig } from '../config/tienda';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  noindex?: boolean;
+  ogImage?: string;
+}
+
+const {
+  title = `Rodillera deportiva de compresión con gel y soporte lateral | ${tiendaConfig.nombreTienda}`,
+  description = 'Rodillera deportiva de compresión con almohadilla de gel en la rótula y estabilizadores laterales de resorte. Pago contraentrega y envío gratis a toda Colombia.',
+  canonical,
+  noindex = false,
+  ogImage = '/assets/hero-clasica.webp',
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString() || 'https://viralyshop.co';
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).toString().replace(/\/$/, '');
+const fullOgImageUrl = new URL(ogImage, siteUrl).toString();
+
+// JSON-LD Product & Organization Schemas
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Rodillera De Compresion',
+  description: 'Rodillera deportiva de compresión con almohadilla de gel anatómica en la rótula y dos estabilizadores laterales de resorte.',
+  image: [
+    fullOgImageUrl,
+    new URL('/assets/clasica-lateral.webp', siteUrl).toString(),
+    new URL('/assets/hero-pro.webp', siteUrl).toString(),
+  ],
+  brand: {
+    '@type': 'Brand',
+    name: tiendaConfig.nombreTienda,
+  },
+  sku: 'FLX-CLA',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Rodillera De Compresion Clásica',
+      price: 69900,
+      priceCurrency: 'COP',
+      priceValidUntil: '2026-12-31',
+      availability: 'https://schema.org/InStock',
+      url: canonicalUrl,
+      seller: {
+        '@type': 'Organization',
+        name: tiendaConfig.nombreTienda,
+      },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Rodillera De Compresion Pro con Ajuste Giratorio',
+      price: 99900,
+      priceCurrency: 'COP',
+      priceValidUntil: '2026-12-31',
+      availability: 'https://schema.org/InStock',
+      url: canonicalUrl,
+      seller: {
+        '@type': 'Organization',
+        name: tiendaConfig.nombreTienda,
+      },
+    },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    reviewCount: '2340',
+    bestRating: '5',
+    worstRating: '1',
+  },
+};
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: tiendaConfig.nombreTienda,
+  legalName: tiendaConfig.razonSocial,
+  url: siteUrl,
+  logo: new URL('/assets/hero-clasica.webp', siteUrl).toString(),
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: `+${tiendaConfig.whatsappSoporte}`,
+    contactType: 'customer service',
+    areaServed: 'CO',
+    availableLanguage: 'es',
+  },
+};
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#1F2933" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {!noindex && <meta name="robots" content="index, follow" />}
+
+    {/* Open Graph & Twitter Cards */}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullOgImageUrl} />
+    <meta property="og:image:alt" content="Rodillera deportiva de compresión puesta con gel en rótula" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullOgImageUrl} />
+
+    {/* Precarga de fuente principal para LCP */}
+    <link
+      rel="preload"
+      href="/_astro/archivo-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    {/* Datos estructurados JSON-LD */}
+    <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+
+    {/* Google Tag Manager (Solo si se suministra ID) */}
+    {tiendaConfig.gtmId && (
+      <script define:vars={{ gtmId: tiendaConfig.gtmId }}>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer',gtmId);
+      </script>
+    )}
+
+    {/* Meta Pixel (Solo si se suministra ID) */}
+    {tiendaConfig.pixelId && (
+      <script define:vars={{ pixelId: tiendaConfig.pixelId }}>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', pixelId);
+        fbq('track', 'PageView');
+      </script>
+    )}
+  </head>
+  <body class="flex flex-col min-h-screen text-[var(--color-tinta)] bg-white antialiased">
+    {tiendaConfig.gtmId && (
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${tiendaConfig.gtmId}`}
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        ></iframe>
+      </noscript>
+    )}
+    
+    <slot />
+  </body>
+</html>

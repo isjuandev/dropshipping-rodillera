@@ -1,0 +1,50 @@
+[
+  {
+    "id": "faq-1",
+    "pregunta": "¿Cómo sé cuál es mi talla adecuada?",
+    "respuesta": "Mide el contorno de tu rodilla justo sobre el centro de la rótula con la pierna completamente estirada. Compara tu medida en centímetros con nuestra tabla de tallas (S: 30–33 cm, M: 33–36 cm, L: 36–40 cm, XL: 40–44 cm) o ingresa tus centímetros en nuestro recomendador interactivo. Si tu medida queda en el límite exacto entre dos tallas, elige siempre la mayor para mayor comodidad.",
+    "orden": 1
+  },
+  {
+    "id": "faq-2",
+    "pregunta": "¿Se nota debajo de la ropa o del pantalón?",
+    "respuesta": "Tiene un diseño anatómico de tejido plano y perfil bajo. Puedes llevarla cómodamente bajo pantalones deportivos, uniformes de trabajo o jeans rectos sin que se note abultada ni restrinja tu movimiento habitual.",
+    "orden": 2
+  },
+  {
+    "id": "faq-3",
+    "pregunta": "¿Cuántas horas continuas la puedo usar?",
+    "respuesta": "Puedes utilizarla durante todo tu entrenamiento, partido, caminata o jornada laboral activa (de 2 a 8 horas). Sugerimos retirarla al finalizar tu actividad física o al dormir para que la piel respire de forma natural.",
+    "orden": 3
+  },
+  {
+    "id": "faq-4",
+    "pregunta": "¿Cómo se lava y se cuida la rodillera?",
+    "respuesta": "Lávala a mano con agua fría y jabón suave o neutro. No uses blanqueadores, no la exprimas retorciendo con fuerza ni uses secadora automática. Déjala secar extendida a la sombra para conservar la elasticidad del tejido, la silicona antideslizante y la almohadilla de gel.",
+    "orden": 4
+  },
+  {
+    "id": "faq-5",
+    "pregunta": "¿Sirve si tengo una lesión previa?",
+    "respuesta": "Producto deportivo de soporte y compresión. No reemplaza el diagnóstico ni el tratamiento médico. Si tienes una lesión previa, molestias articulares o afecciones previas, consulta a un profesional de la salud calificado antes de usar cualquier artículo de soporte deportivo.",
+    "orden": 5
+  },
+  {
+    "id": "faq-6",
+    "pregunta": "¿Puedo cambiar la talla si no me queda bien?",
+    "respuesta": "Sí, el cambio de talla es 100 % gratis. Si al recibirla y probarla notas que necesitas una talla más amplia o más ajustada, comunícate con nosotros y te enviaremos la talla correcta sin ningún costo de flete.",
+    "orden": 6
+  },
+  {
+    "id": "faq-7",
+    "pregunta": "¿Cómo funciona el pago contraentrega?",
+    "respuesta": "No necesitas ingresar tarjetas de crédito ni transferir dinero por anticipado. Llenas el formulario en esta página, te contactamos para verificar tu dirección y pagas en efectivo directamente al repartidor cuando recibas tu paquete.",
+    "orden": 7
+  },
+  {
+    "id": "faq-8",
+    "pregunta": "¿Cuánto tiempo tarda en llegar el envío?",
+    "respuesta": "El tiempo de entrega habitual es de 2 a 5 días hábiles a cualquier municipio o ciudad de Colombia mediante las principales transportadoras nacionales (Servientrega, Envía, Coordinadora o Interrapidísimo). El envío es completamente gratuito.",
+    "orden": 8
+  }
+]

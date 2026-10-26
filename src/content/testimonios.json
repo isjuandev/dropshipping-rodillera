@@ -1,0 +1,56 @@
+[
+  {
+    "id": "testimonio-1",
+    "nombre": "Carlos Restrepo",
+    "ciudad": "Medellín",
+    "actividad": "Fútbol semanal y trote",
+    "foto": "/assets/avatar-1.webp",
+    "texto": "Juego fútbol los fines de semana y el soporte lateral se siente firme en los giros. Lo mejor es que no se baja ni se enrolla durante todo el partido.",
+    "estrellas": 5
+  },
+  {
+    "id": "testimonio-2",
+    "nombre": "Marcela Pardo",
+    "ciudad": "Bogotá D.C.",
+    "actividad": "Gimnasio y sentadillas",
+    "foto": "/assets/avatar-2.webp",
+    "texto": "La almohadilla de gel abraza muy bien la rótula cuando hago sentadillas pesadas. Da mucha seguridad para entrenar con buena técnica.",
+    "estrellas": 5
+  },
+  {
+    "id": "testimonio-3",
+    "nombre": "Andrés Felipe Caicedo",
+    "ciudad": "Cali",
+    "actividad": "Ciclismo de ruta",
+    "foto": "/assets/avatar-3.webp",
+    "texto": "Pedaleo 40 km los domingos. El tejido air knit transpira muy bien con el calor de Cali y la compresión se mantiene uniforme en cada pedaleo.",
+    "estrellas": 5
+  },
+  {
+    "id": "testimonio-4",
+    "nombre": "Gloria Inés Mejía",
+    "ciudad": "Pereira",
+    "actividad": "Caminatas y senderismo",
+    "foto": "/assets/avatar-4.webp",
+    "texto": "Me gusta caminar por senderos y subir colinas. Con la rodillera siento el paso mucho más estable en las bajadas y no me incomoda para nada.",
+    "estrellas": 5
+  },
+  {
+    "id": "testimonio-5",
+    "nombre": "Javier Mantilla",
+    "ciudad": "Bucaramanga",
+    "actividad": "Trabajo de pie (bodega)",
+    "foto": "/assets/avatar-5.webp",
+    "texto": "Paso 8 horas de pie en el almacén cargando cajas. La diferencia en firmeza al final del día es enorme. Ya pedí el segundo par.",
+    "estrellas": 4
+  },
+  {
+    "id": "testimonio-6",
+    "nombre": "Paola Andrea Silva",
+    "ciudad": "Barranquilla",
+    "actividad": "Crossfit y saltos de cuerda",
+    "foto": "/assets/avatar-6.webp",
+    "texto": "Las bandas de silicona en la parte superior realmente funcionan. Salto lazo y hago cambios de ritmo sin tener que acomodarla a cada rato.",
+    "estrellas": 5
+  }
+]

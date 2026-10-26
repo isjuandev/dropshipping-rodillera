@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/secciones/Header.astro';
+import Footer from '../components/secciones/Footer.astro';
+import { tiendaConfig } from '../config/tienda';
+---
+<Base title={`Política de Privacidad y Tratamiento de Datos | ${tiendaConfig.nombreTienda}`}>
+  <Header />
+  <main class="py-12 md:py-16 bg-[var(--color-niebla)]">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border border-[var(--color-borde)] shadow-sm space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-[var(--color-teal)]">Habeas Data</span>
+          <h1 class="text-3xl font-black text-[var(--color-tinta)] mt-1">Política de Tratamiento de Datos Personales</h1>
+          <p class="text-xs text-[var(--color-gris)] mt-1">En cumplimiento de la Ley Estatutaria 1581 de 2012 y el Decreto 1377 de 2013 de Colombia</p>
+        </div>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">1. Responsable del Tratamiento</h2>
+          <p>
+            El responsable del tratamiento de sus datos personales es <strong>{tiendaConfig.razonSocial}</strong>, identificada con NIT <strong>{tiendaConfig.nit}</strong>, con domicilio en Colombia y contacto mediante nuestro canal de atención digital.
+          </p>
+        </section>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">2. Finalidades de la Recolección</h2>
+          <p>
+            Los datos personales suministrados en el formulario contraentrega (nombre, teléfono celular, departamento, ciudad y dirección) serán utilizados exclusivamente para las siguientes finalidades:
+          </p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Contactar telefónicamente o vía mensajería instantánea para verificar y confirmar los datos de su pedido.</li>
+            <li>Generar las guías de transporte con las empresas de mensajería aliadas para la entrega física del paquete.</li>
+            <li>Gestionar cobros contraentrega y seguimiento post-venta de garantía o cambio de talla.</li>
+            <li>Cumplir con requerimientos legales, contables y tributarios aplicables en Colombia.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">3. Derechos de los Titulares</h2>
+          <p>
+            Como titular de datos personales en Colombia, a usted le asisten los siguientes derechos:
+          </p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Conocer, actualizar y rectificar sus datos personales frente al Responsable.</li>
+            <li>Solicitar prueba de la autorización otorgada para el tratamiento de datos.</li>
+            <li>Ser informado sobre el uso que se le ha dado a sus datos personales.</li>
+            <li>Revocar la autorización y/o solicitar la supresión de sus datos cuando no medie un deber legal o contractual de permanecer en la base de datos.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">4. Seguridad de la Información</h2>
+          <p>
+            Implementamos medidas técnicas y organizacionales para evitar la pérdida, adulteración, consulta o uso no autorizado de su información. Nunca vendemos ni compartimos sus datos personales con terceros con fines comerciales ajenos a la operación de su pedido.
+          </p>
+        </section>
+
+        <div class="pt-4 border-t border-[var(--color-borde)]">
+          <a href="/" class="text-xs font-bold text-[var(--color-teal)] hover:underline flex items-center gap-1">
+            ← Volver a la página principal
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>

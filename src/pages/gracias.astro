@@ -1,0 +1,259 @@
+---
+import Base from '../layouts/Base.astro';
+import { tiendaConfig } from '../config/tienda';
+---
+<Base title={`¡Pedido recibido! | ${tiendaConfig.nombreTienda}`} noindex={true}>
+  <div class="min-h-screen bg-[var(--color-niebla)] py-10 md:py-16 px-4">
+    <div class="max-w-2xl mx-auto space-y-6">
+      
+      {/* Tarjeta Principal de Confirmación */}
+      <div class="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-[var(--color-borde)] shadow-lg text-center">
+        
+        {/* Icono de Éxito */}
+        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-emerald-100 text-[var(--color-exito)] rounded-full flex items-center justify-center mx-auto mb-5 shadow-xs">
+          <svg class="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <span class="text-xs font-black tracking-widest text-[var(--color-exito)] uppercase bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+          ¡PEDIDO REGISTRADO CON ÉXITO!
+        </span>
+
+        <h1 id="cliente-saludo" class="text-2xl sm:text-3xl md:text-4xl font-black text-[var(--color-tinta)] mt-3">
+          ¡Pedido recibido!
+        </h1>
+
+        <p class="text-xs sm:text-sm text-[var(--color-gris)] mt-2 leading-relaxed">
+          Hemos recibido tu solicitud contraentrega. Tu orden está en proceso de asignación para confirmación telefónica.
+        </p>
+
+        {/* Número de Pedido Copiable */}
+        <div class="mt-6 bg-[var(--color-niebla)] rounded-2xl p-4 border border-[var(--color-borde)] flex items-center justify-between gap-3 max-w-md mx-auto">
+          <div class="text-left">
+            <span class="text-[11px] text-[var(--color-gris)] font-bold uppercase tracking-wider block">
+              Número de pedido
+            </span>
+            <span id="pedido-id-display" class="text-base sm:text-lg font-black text-[var(--color-tinta)] tracking-wider tabular-nums">
+              Cargando…
+            </span>
+          </div>
+
+          <button
+            id="btn-copiar-id"
+            type="button"
+            class="px-3.5 py-2 bg-white hover:bg-gray-50 border border-[var(--color-borde)] text-[var(--color-tinta)] font-bold text-xs rounded-xl transition-all shadow-xs cursor-pointer flex items-center gap-1.5 shrink-0"
+          >
+            <svg class="w-4 h-4 text-[var(--color-teal)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            <span id="btn-copiar-texto">Copiar</span>
+          </button>
+        </div>
+
+        {/* Alerta Importante */}
+        <div class="mt-6 bg-amber-50 border border-amber-200 rounded-2xl p-4 text-left flex items-start gap-3">
+          <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+          <div class="text-xs text-amber-900 leading-relaxed">
+            <strong class="font-bold block mb-0.5">Ten a mano tu celular:</strong>
+            Si no logramos confirmar tu pedido por llamada o WhatsApp, no podremos despachar tu paquete.
+          </div>
+        </div>
+
+        {/* Resumen del Pedido */}
+        <div class="mt-8 text-left border-t border-[var(--color-borde)] pt-6">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-[var(--color-gris)] mb-3">
+            Detalle del despacho contraentrega
+          </h2>
+          <div class="bg-[var(--color-niebla)] rounded-2xl p-4 sm:p-5 border border-[var(--color-borde)] space-y-2.5 text-xs sm:text-sm">
+            <div class="flex justify-between py-1 border-b border-gray-200">
+              <span class="text-[var(--color-gris)]">Modelo:</span>
+              <strong id="resumen-modelo" class="text-[var(--color-tinta)] text-right">Rodillera De Compresion</strong>
+            </div>
+            <div class="flex justify-between py-1 border-b border-gray-200">
+              <span class="text-[var(--color-gris)]">Paquete:</span>
+              <strong id="resumen-pack" class="text-[var(--color-tinta)] text-right">Par (2 unidades)</strong>
+            </div>
+            <div class="flex justify-between py-1 border-b border-gray-200">
+              <span class="text-[var(--color-gris)]">Tallas elegidas:</span>
+              <strong id="resumen-tallas" class="text-[var(--color-tinta)] text-right">M</strong>
+            </div>
+            <div class="flex justify-between py-1 border-b border-gray-200">
+              <span class="text-[var(--color-gris)]">Destino:</span>
+              <strong id="resumen-ciudad" class="text-[var(--color-tinta)] text-right">-</strong>
+            </div>
+            <div class="flex justify-between py-1 border-b border-gray-200">
+              <span class="text-[var(--color-gris)]">Dirección:</span>
+              <strong id="resumen-direccion" class="text-[var(--color-tinta)] text-right">-</strong>
+            </div>
+            <div class="flex justify-between items-baseline pt-2">
+              <div>
+                <span class="text-xs text-[var(--color-gris)] font-medium block">Pagas en efectivo al transportador:</span>
+                <span class="text-[11px] text-[var(--color-exito)] font-bold">Envío gratis incluido</span>
+              </div>
+              <strong id="resumen-total" class="text-2xl font-black text-[var(--color-tinta)] tabular-nums">
+                $119.900
+              </strong>
+            </div>
+          </div>
+        </div>
+
+        {/* 3 Pasos de qué sigue */}
+        <div class="mt-8 text-left border-t border-[var(--color-borde)] pt-6">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-[var(--color-gris)] mb-4 text-center sm:text-left">
+            ¿Qué sigue ahora?
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-2xl border border-[var(--color-borde)] shadow-2xs">
+              <span class="w-7 h-7 rounded-full bg-sky-100 text-[var(--color-teal)] font-black text-xs flex items-center justify-center mb-2">
+                1
+              </span>
+              <h3 class="font-bold text-xs text-[var(--color-tinta)]">Te contactamos</h3>
+              <p class="text-[11px] text-[var(--color-gris)] mt-1 leading-normal">
+                Confirmamos dirección y tallas contigo por llamada o WhatsApp antes de empacar.
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-[var(--color-borde)] shadow-2xs">
+              <span class="w-7 h-7 rounded-full bg-sky-100 text-[var(--color-teal)] font-black text-xs flex items-center justify-center mb-2">
+                2
+              </span>
+              <h3 class="font-bold text-xs text-[var(--color-tinta)]">Despachamos</h3>
+              <p class="text-[11px] text-[var(--color-gris)] mt-1 leading-normal">
+                Enviamos tu paquete con número de guía rastreable (entrega en 2 a 5 días).
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-[var(--color-borde)] shadow-2xs">
+              <span class="w-7 h-7 rounded-full bg-sky-100 text-[var(--color-teal)] font-black text-xs flex items-center justify-center mb-2">
+                3
+              </span>
+              <h3 class="font-bold text-xs text-[var(--color-tinta)]">Pagas al recibir</h3>
+              <p class="text-[11px] text-[var(--color-gris)] mt-1 leading-normal">
+                Pagas en efectivo al repartidor cuando toque a tu puerta. ¡Sin riesgos!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Botón de Retorno */}
+        <div class="mt-8 pt-4">
+          <a
+            href="/"
+            class="inline-flex items-center justify-center gap-2 px-8 h-13 bg-[var(--color-grafito)] hover:bg-black text-white font-bold text-sm rounded-xl transition-all"
+          >
+            <span>Volver a la tienda</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      // 1. Obtener ID de la URL
+      var params = new URLSearchParams(window.location.search);
+      var pedidoIdUrl = params.get('id') || 'PED-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-XXXX';
+
+      // 2. Leer resumen almacenado
+      var resumen = null;
+      try {
+        var raw = localStorage.getItem('ultimo_pedido_resumen');
+        if (raw) resumen = JSON.parse(raw);
+      } catch (e) {}
+
+      var pedidoId = (resumen && resumen.pedidoId) ? resumen.pedidoId : pedidoIdUrl;
+      var nombre = (resumen && resumen.nombre) ? resumen.nombre : '';
+      var total = (resumen && resumen.total) ? resumen.total : 119900;
+      var modelo = (resumen && resumen.modelo) ? resumen.modelo : 'Rodillera De Compresion';
+      var pack = (resumen && resumen.pack) ? resumen.pack : 'Par';
+      var tallas = (resumen && resumen.tallas) ? resumen.tallas : 'M';
+      var ciudad = (resumen && resumen.ciudad) ? resumen.ciudad : 'Colombia';
+      var direccion = (resumen && resumen.direccion) ? resumen.direccion : 'Confirmada telefónicamente';
+
+      // 3. Actualizar textos en pantalla
+      var idElem = document.getElementById('pedido-id-display');
+      if (idElem) idElem.textContent = pedidoId;
+
+      var saludoElem = document.getElementById('cliente-saludo');
+      if (saludoElem && nombre) {
+        saludoElem.textContent = '¡Pedido recibido, ' + nombre.split(' ')[0] + '!';
+      }
+
+      var modElem = document.getElementById('resumen-modelo');
+      if (modElem) modElem.textContent = modelo;
+
+      var packElem = document.getElementById('resumen-pack');
+      if (packElem) packElem.textContent = pack;
+
+      var tallasElem = document.getElementById('resumen-tallas');
+      if (tallasElem) tallasElem.textContent = tallas;
+
+      var ciudadElem = document.getElementById('resumen-ciudad');
+      if (ciudadElem) ciudadElem.textContent = ciudad;
+
+      var dirElem = document.getElementById('resumen-direccion');
+      if (dirElem) dirElem.textContent = direccion;
+
+      var totalElem = document.getElementById('resumen-total');
+      if (totalElem) totalElem.textContent = '$' + Number(total).toLocaleString('es-CO');
+
+      // 4. Botón copiar ID
+      var btnCopiar = document.getElementById('btn-copiar-id');
+      var btnTexto = document.getElementById('btn-copiar-texto');
+      if (btnCopiar) {
+        btnCopiar.addEventListener('click', function () {
+          navigator.clipboard.writeText(pedidoId).then(function () {
+            if (btnTexto) btnTexto.textContent = '¡Copiado!';
+            setTimeout(function () {
+              if (btnTexto) btnTexto.textContent = 'Copiar';
+            }, 2000);
+          });
+        });
+      }
+
+      // 5. Tracking una sola vez por pedidoId
+      var trackKey = 'viraly_lead_tracked_' + pedidoId;
+      if (!sessionStorage.getItem(trackKey)) {
+        sessionStorage.setItem(trackKey, '1');
+
+        // DataLayer GTM
+        if (window.dataLayer && Array.isArray(window.dataLayer)) {
+          window.dataLayer.push({
+            event: 'generate_lead',
+            transaction_id: pedidoId,
+            value: total,
+            currency: 'COP',
+            items: [
+              {
+                item_name: modelo,
+                item_category: 'Rodillera deportiva',
+                price: total,
+                quantity: 1,
+              },
+            ],
+          });
+        }
+
+        // Meta Pixel
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Lead', {
+            value: total,
+            currency: 'COP',
+            content_name: modelo,
+          }, { eventID: pedidoId });
+        }
+      }
+    })();
+  </script>
+</Base>

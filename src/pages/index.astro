@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import AnnouncementBar from '../components/secciones/AnnouncementBar.astro';
+import Header from '../components/secciones/Header.astro';
+import Hero from '../components/secciones/Hero.astro';
+import TrustStrip from '../components/secciones/TrustStrip.astro';
+import Activities from '../components/secciones/Activities.astro';
+import AnatomySection from '../components/secciones/AnatomySection.astro';
+import HowToWear from '../components/secciones/HowToWear.astro';
+import SizeSection from '../components/secciones/SizeSection.astro';
+import ComparisonTable from '../components/secciones/ComparisonTable.astro';
+import PacksSection from '../components/secciones/PacksSection.astro';
+import Testimonials from '../components/secciones/Testimonials.astro';
+import Warranty from '../components/secciones/Warranty.astro';
+import OrderSection from '../components/secciones/OrderSection.astro';
+import Faq from '../components/secciones/Faq.astro';
+import FinalCta from '../components/secciones/FinalCta.astro';
+import Footer from '../components/secciones/Footer.astro';
+import StickyBar from '../components/islas/StickyBar';
+---
+<Base>
+  {/* 1. Barra de anuncio */}
+  <AnnouncementBar />
+
+  {/* 2. Header mínimo */}
+  <Header />
+
+  <main>
+    {/* 3. Hero */}
+    <Hero />
+
+    {/* 4. Franja de confianza */}
+    <TrustStrip />
+
+    {/* 5. Para tu actividad */}
+    <Activities />
+
+    {/* 6. Anatomía del producto */}
+    <AnatomySection />
+
+    {/* 7. Cómo se pone */}
+    <HowToWear />
+
+    {/* 8. Guía de tallas */}
+    <SizeSection />
+
+    {/* 9. Comparativa */}
+    <ComparisonTable />
+
+    {/* 10. Packs */}
+    <PacksSection />
+
+    {/* 11. Testimonios */}
+    <Testimonials />
+
+    {/* 12. Garantía */}
+    <Warranty />
+
+    {/* 13. Formulario contraentrega (#pedido) */}
+    <OrderSection />
+
+    {/* 14. FAQ */}
+    <Faq />
+
+    {/* 15. CTA final */}
+    <FinalCta />
+  </main>
+
+  {/* 16. Footer */}
+  <Footer />
+
+  {/* Barra fija inferior móvil */}
+  <StickyBar client:idle />
+</Base>

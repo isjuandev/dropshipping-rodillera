@@ -1,0 +1,42 @@
+---
+import { tiendaConfig } from '../../config/tienda';
+---
+<section class="py-14 md:py-16 bg-[var(--color-niebla)] border-y border-[var(--color-borde)] section-animate">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-[var(--color-borde)] shadow-sm flex flex-col md:flex-row items-center gap-6 md:gap-8">
+      {/* Insignia Garantía */}
+      <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-sky-50 border-2 border-[var(--color-teal)] flex flex-col items-center justify-center shrink-0 text-center shadow-xs">
+        <svg class="w-8 h-8 text-[var(--color-teal)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span class="text-xs font-black text-[var(--color-tinta)] mt-1 uppercase">30 Días</span>
+        <span class="text-[9px] font-bold text-[var(--color-teal)] uppercase">Garantía</span>
+      </div>
+
+      {/* Explicación de Garantía */}
+      <div class="flex-1 text-center md:text-left space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-[var(--color-teal)]">
+          Compra 100 % Segura y Protegida
+        </span>
+        <h3 class="text-2xl font-black text-[var(--color-tinta)]">
+          Garantía de {tiendaConfig.garantiaDias} días y cambio de talla sin costo
+        </h3>
+        <p class="text-xs sm:text-sm text-[var(--color-gris)] leading-relaxed">
+          Si tu rodillera presenta cualquier defecto de costura, resorte o material durante los primeros 30 días, te enviamos una nueva unidad de inmediato. Además, si al probártela necesitas una talla más amplia o más ajustada, gestionamos el cambio de talla sin que pagues fletes adicionales.
+        </p>
+        <div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs font-bold text-[var(--color-tinta)]">
+          <span class="flex items-center gap-1.5 text-[var(--color-exito)]">
+            ✓ Inspeccionada antes de despachar
+          </span>
+          <span class="flex items-center gap-1.5 text-[var(--color-exito)]">
+            ✓ Envío de cambio gratis
+          </span>
+          <span class="flex items-center gap-1.5 text-[var(--color-exito)]">
+            ✓ Atención directa en Colombia
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

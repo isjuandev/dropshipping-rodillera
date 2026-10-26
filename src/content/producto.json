@@ -1,0 +1,247 @@
+[
+  {
+    "id": "rodillera",
+    "nombreBase": "Rodillera De Compresion",
+    "modelos": [
+      {
+        "id": "clasica",
+        "nombre": "Rodillera De Compresion Clásica",
+        "descripcionCorta": "Manga de compresión en tejido air knit transpirable, almohadilla de gel anatómica en la rótula y 2 estabilizadores laterales de resorte.",
+        "sku": "FLX-CLA",
+        "precio": 69900,
+        "precioAnterior": 119900,
+        "imagenes": [
+          "/assets/hero-clasica.webp",
+          "/assets/clasica-lateral.webp",
+          "/assets/clasica-puesta.webp",
+          "/assets/detalle-gel.webp",
+          "/assets/detalle-resortes.webp"
+        ],
+        "caracteristicas": [
+          {
+            "id": "cinta",
+            "titulo": "Cinta elástica interior",
+            "texto": "Se ajusta al contorno del muslo con suavidad y sin apretar en exceso.",
+            "x": 24,
+            "y": 14,
+            "imagenDetalle": "/assets/detalle-cinta.webp"
+          },
+          {
+            "id": "tiras-gel",
+            "titulo": "Tiras de gel antideslizantes",
+            "texto": "Borde interior con doble hilera ondulada que evita que la rodillera se baje al moverte.",
+            "x": 76,
+            "y": 15,
+            "imagenDetalle": "/assets/detalle-tiras.webp"
+          },
+          {
+            "id": "resortes",
+            "titulo": "Estabilizadores laterales de resorte",
+            "texto": "Dos resortes flexibles a cada lado que aportan firmeza y estabilidad lateral en cada paso.",
+            "x": 22,
+            "y": 76,
+            "imagenDetalle": "/assets/detalle-resortes.webp"
+          },
+          {
+            "id": "almohadilla",
+            "titulo": "Almohadilla de gel en la rótula",
+            "texto": "Anillo de gel de silicona anatómicamente contorneado que amortigua impactos y centra la rótula.",
+            "x": 80,
+            "y": 48,
+            "imagenDetalle": "/assets/detalle-gel.webp"
+          },
+          {
+            "id": "air-knit",
+            "titulo": "Tejido air knit transpirable",
+            "texto": "Estructura microperforada de alta ventilación que disipa el sudor y seca en minutos.",
+            "x": 78,
+            "y": 80,
+            "imagenDetalle": "/assets/detalle-tejido.webp"
+          },
+          {
+            "id": "punto-horizontal",
+            "titulo": "Tejido de punto horizontal",
+            "texto": "Se adapta anatómicamente a la flexión de tu pierna sin crear pliegues incómodos.",
+            "x": 24,
+            "y": 46,
+            "imagenDetalle": "/assets/detalle-horizontal.webp"
+          }
+        ]
+      },
+      {
+        "id": "pro",
+        "nombre": "Rodillera De Compresion Pro con Ajuste Giratorio",
+        "descripcionCorta": "Todo el soporte de la versión clásica más un sistema de perilla giratoria con cordones tensores para calibrar la compresión al milímetro.",
+        "sku": "FLX-PRO",
+        "precio": 99900,
+        "precioAnterior": 159900,
+        "imagenes": [
+          "/assets/hero-pro.webp",
+          "/assets/pro-lateral.webp",
+          "/assets/pro-puesta.webp",
+          "/assets/pro-perilla.webp",
+          "/assets/detalle-resortes.webp"
+        ],
+        "caracteristicas": [
+          {
+            "id": "perilla",
+            "titulo": "Perilla giratoria de ajuste rápido",
+            "texto": "Gira la perilla para ajustar la presión exacta que necesitas y suelta levantando con un toque.",
+            "x": 22,
+            "y": 24,
+            "imagenDetalle": "/assets/pro-perilla.webp"
+          },
+          {
+            "id": "cinta",
+            "titulo": "Cinta elástica interior",
+            "texto": "Se ajusta al contorno del muslo con suavidad y sin apretar en exceso.",
+            "x": 24,
+            "y": 14,
+            "imagenDetalle": "/assets/detalle-cinta.webp"
+          },
+          {
+            "id": "tiras-gel",
+            "titulo": "Tiras de gel antideslizantes",
+            "texto": "Borde interior con doble hilera ondulada que evita que la rodillera se baje al moverte.",
+            "x": 76,
+            "y": 15,
+            "imagenDetalle": "/assets/detalle-tiras.webp"
+          },
+          {
+            "id": "resortes",
+            "titulo": "Estabilizadores laterales de resorte",
+            "texto": "Dos resortes flexibles a cada lado que aportan firmeza y estabilidad lateral en cada paso.",
+            "x": 22,
+            "y": 76,
+            "imagenDetalle": "/assets/detalle-resortes.webp"
+          },
+          {
+            "id": "almohadilla",
+            "titulo": "Almohadilla de gel en la rótula",
+            "texto": "Anillo de gel de silicona anatómicamente contorneado que amortigua impactos y centra la rótula.",
+            "x": 80,
+            "y": 48,
+            "imagenDetalle": "/assets/detalle-gel.webp"
+          },
+          {
+            "id": "air-knit",
+            "titulo": "Tejido air knit transpirable",
+            "texto": "Estructura microperforada de alta ventilación que disipa el sudor y seca en minutos.",
+            "x": 78,
+            "y": 80,
+            "imagenDetalle": "/assets/detalle-tejido.webp"
+          },
+          {
+            "id": "punto-horizontal",
+            "titulo": "Tejido de punto horizontal",
+            "texto": "Se adapta anatómicamente a la flexión de tu pierna sin crear pliegues incómodos.",
+            "x": 24,
+            "y": 46,
+            "imagenDetalle": "/assets/detalle-horizontal.webp"
+          }
+        ]
+      }
+    ],
+    "packs": [
+      {
+        "id": "individual",
+        "nombre": "Una rodillera",
+        "unidades": 1,
+        "precios": {
+          "clasica": 69900,
+          "pro": 99900
+        },
+        "ahorroTexto": "Ahorras $50.000 vs precio regular"
+      },
+      {
+        "id": "par",
+        "nombre": "Par (ambas rodillas o de repuesto)",
+        "unidades": 2,
+        "precios": {
+          "clasica": 119900,
+          "pro": 179900
+        },
+        "ahorroTexto": "Ahorras $19.900 adicionales",
+        "etiqueta": "MÁS VENDIDO"
+      },
+      {
+        "id": "doble-par",
+        "nombre": "Dos pares (para ti y alguien más)",
+        "unidades": 4,
+        "precios": {
+          "clasica": 219900,
+          "pro": 329900
+        },
+        "ahorroTexto": "Mayor ahorro por unidad ($54.975 c/u)",
+        "etiqueta": "MEJOR PRECIO"
+      }
+    ],
+    "tallas": [
+      {
+        "talla": "S",
+        "min": 30,
+        "max": 33,
+        "rangoTexto": "30 a 33 cm"
+      },
+      {
+        "talla": "M",
+        "min": 33,
+        "max": 36,
+        "rangoTexto": "33 a 36 cm"
+      },
+      {
+        "talla": "L",
+        "min": 36,
+        "max": 40,
+        "rangoTexto": "36 a 40 cm"
+      },
+      {
+        "talla": "XL",
+        "min": 40,
+        "max": 44,
+        "rangoTexto": "40 a 44 cm"
+      }
+    ],
+    "comparativa": [
+      {
+        "caracteristica": "Estabilizadores laterales con resortes",
+        "flexiKnee": true,
+        "comun": false,
+        "venda": false
+      },
+      {
+        "caracteristica": "Almohadilla de gel en la rótula",
+        "flexiKnee": true,
+        "comun": false,
+        "venda": false
+      },
+      {
+        "caracteristica": "Se queda en su sitio sin bajarse ni enrollarse",
+        "flexiKnee": true,
+        "comun": false,
+        "venda": false
+      },
+      {
+        "caracteristica": "Tejido transpirable de secado rápido",
+        "flexiKnee": true,
+        "comun": false,
+        "venda": false
+      },
+      {
+        "caracteristica": "Se pone y ajusta en segundos",
+        "flexiKnee": true,
+        "comun": true,
+        "venda": false
+      },
+      {
+        "caracteristica": "Lavable a mano sin perder elasticidad",
+        "flexiKnee": true,
+        "comun": true,
+        "venda": false
+      }
+    ],
+    "rating": 4.8,
+    "numResenas": 2340,
+    "stock": 14
+  }
+]

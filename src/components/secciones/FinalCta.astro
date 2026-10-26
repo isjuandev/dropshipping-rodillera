@@ -1,0 +1,58 @@
+---
+import { tiendaConfig } from '../../config/tienda';
+---
+<section class="py-16 md:py-20 bg-[var(--color-grafito)] text-white relative overflow-hidden section-animate">
+  <!-- Círculos decorativos sutiles de fondo -->
+  <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-[var(--color-teal)]/10 blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-[var(--color-cta)]/10 blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+    <!-- Badge Pack Más Vendido -->
+    <span class="inline-block bg-[var(--color-oferta)] text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm mb-4">
+      OFERTA LIMITADA · MÁS VENDIDO
+    </span>
+
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">
+      Empieza hoy a moverte con firmeza y soporte
+    </h2>
+    <p class="text-sm sm:text-base text-gray-300 mt-3 max-w-2xl mx-auto leading-relaxed">
+      Lleva el <strong class="text-white">Par de rodilleras de compresión</strong> por solo <span class="font-extrabold text-[var(--color-cta)] tabular-nums">$119.900</span> (antes <span class="line-through text-gray-400 tabular-nums">$239.800</span>). Envío gratis a cualquier rincón de Colombia.
+    </p>
+
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="#pedido"
+        class="btn-cta w-full sm:w-auto px-10 h-15 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-[var(--color-tinta)] font-black text-lg rounded-[14px] shadow-xl flex items-center justify-center gap-2.5 transition-all active:scale-[0.98]"
+      >
+        <span>Pedir el par ahora — pago contraentrega</span>
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Microcopy de confianza -->
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-gray-400 font-medium">
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-[var(--color-exito)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Pagas en efectivo al recibir
+      </span>
+      <span>•</span>
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-[var(--color-exito)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Envío gratuito nacional
+      </span>
+      <span>•</span>
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-[var(--color-exito)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Garantía de {tiendaConfig.garantiaDias} días
+      </span>
+    </div>
+  </div>
+</section>

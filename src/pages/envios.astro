@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/secciones/Header.astro';
+import Footer from '../components/secciones/Footer.astro';
+import { tiendaConfig } from '../config/tienda';
+---
+<Base title={`Tiempos y Políticas de Envío | ${tiendaConfig.nombreTienda}`}>
+  <Header />
+  <main class="py-12 md:py-16 bg-[var(--color-niebla)]">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border border-[var(--color-borde)] shadow-sm space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-[var(--color-teal)]">Información Logística</span>
+          <h1 class="text-3xl font-black text-[var(--color-tinta)] mt-1">Políticas de Envío y Cobertura</h1>
+          <p class="text-xs text-[var(--color-gris)] mt-1">Última actualización: Enero 2026</p>
+        </div>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">1. Cobertura Nacional</h2>
+          <p>
+            Realizamos despachos con pago contraentrega a más del 95 % del territorio nacional colombiano, cubriendo ciudades principales y municipios de los 32 departamentos y Bogotá D.C., mediante alianzas con transportadoras certificadas (Servientrega, Envía, Coordinadora e Interrapidísimo).
+          </p>
+        </section>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">2. Tiempos de Entrega</h2>
+          <p>
+            Una vez confirmados tus datos telefónicamente, el tiempo habitual de entrega es de:
+          </p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Ciudades principales (Bogotá, Medellín, Cali, Barranquilla, Bucaramanga, Pereira):</strong> 2 a 3 días hábiles.</li>
+            <li><strong>Otras ciudades y municipios intermedios:</strong> 3 a 5 días hábiles.</li>
+            <li><strong>Zonas con reexpedición o trayectos especiales:</strong> hasta 6 días hábiles.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">3. Costo del Envío</h2>
+          <p>
+            El envío es <strong>100 % gratuito</strong> en todas las compras realizadas en nuestra tienda bajo la modalidad contraentrega. No cobramos ningún recargo adicional sobre el precio acordado en el pedido.
+          </p>
+        </section>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">4. Proceso de Entrega y Pago</h2>
+          <p>
+            El transportador entregará el paquete sellado en la dirección indicada y recibirá el valor total en efectivo. Te recomendamos tener a la mano el importe exacto o sencillo para agilizar la entrega.
+          </p>
+        </section>
+
+        <div class="pt-4 border-t border-[var(--color-borde)]">
+          <a href="/" class="text-xs font-bold text-[var(--color-teal)] hover:underline flex items-center gap-1">
+            ← Volver a la página principal
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>

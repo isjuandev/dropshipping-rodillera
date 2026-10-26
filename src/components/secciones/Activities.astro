@@ -1,0 +1,82 @@
+---
+const actividades = [
+  {
+    titulo: 'Correr y trote',
+    frase: 'Acompaña el impacto repetitivo en cada zancada manteniendo la rótula guiada y el tejido ventilado.',
+    foto: '/assets/actividad-correr.webp',
+  },
+  {
+    titulo: 'Fútbol y cancha',
+    frase: 'Aporta firmeza lateral en frenadas bruscas, giros rápidos y cambios continuos de dirección.',
+    foto: '/assets/actividad-futbol.webp',
+  },
+  {
+    titulo: 'Gimnasio y pesas',
+    frase: 'Centra la articulación con firmeza en sentadillas, prensa y saltos sin restringir tu rango de flexión.',
+    foto: '/assets/actividad-gym.webp',
+  },
+  {
+    titulo: 'Ciclismo y ruta',
+    frase: 'Tejido elástico que se adapta a miles de revoluciones de pedaleo sin pellizcar ni acumular sudor.',
+    foto: '/assets/actividad-ciclismo.webp',
+  },
+  {
+    titulo: 'Caminar y escaleras',
+    frase: 'Estabilidad constante al subir pendientes y escalones en tus trayectos diarios o paseos al aire libre.',
+    foto: '/assets/actividad-caminar.webp',
+  },
+  {
+    titulo: 'Trabajo de pie',
+    frase: 'Sensación de ligereza y soporte continuo durante turnos largos en comercio, talleres o bodega.',
+    foto: '/assets/actividad-trabajo.webp',
+  },
+];
+---
+<section class="py-16 md:py-20 bg-white section-animate">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs font-bold uppercase tracking-wider text-[var(--color-teal)] bg-sky-50 border border-sky-200 px-3 py-1 rounded-full">
+        Para tu día a día
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[var(--color-tinta)] mt-3">
+        Soporte firme para cada actividad
+      </h2>
+      <p class="text-sm md:text-base text-[var(--color-gris)] mt-2">
+        Para los que corren, juegan, entrenan y se mueven todo el día por Colombia.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {actividades.map((item) => (
+        <div class="group bg-white rounded-2xl border border-[var(--color-borde)] overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+          <div class="relative w-full aspect-[4/3] bg-[var(--color-niebla)] overflow-hidden">
+            <img
+              src={item.foto}
+              alt={`Rodillera de compresión en actividad: ${item.titulo}`}
+              width={600}
+              height={450}
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <h3 class="absolute bottom-3 left-4 font-black text-lg text-white">
+              {item.titulo}
+            </h3>
+          </div>
+
+          <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+            <p class="text-xs sm:text-sm text-[var(--color-gris)] leading-relaxed">
+              {item.frase}
+            </p>
+            <div class="mt-4 pt-3 border-t border-[var(--color-borde)] flex items-center justify-between text-xs font-semibold text-[var(--color-teal)]">
+              <span>Soporte activo</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

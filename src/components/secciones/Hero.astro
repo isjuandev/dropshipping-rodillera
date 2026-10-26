@@ -1,0 +1,233 @@
+---
+import OrderSelector from '../islas/OrderSelector';
+import { tiendaConfig } from '../../config/tienda';
+
+const slides = [
+  { id: 'slide-video', type: 'video', poster: '/assets/video-poster.webp', title: 'Video demostración' },
+  { id: 'slide-1', type: 'img', src: '/assets/hero-clasica.webp', alt: 'Rodillera deportiva de compresión vista frontal', title: 'Frente' },
+  { id: 'slide-2', type: 'img', src: '/assets/clasica-lateral.webp', alt: 'Estabilizadores laterales de resorte vista de lado', title: 'De lado' },
+  { id: 'slide-3', type: 'img', src: '/assets/clasica-puesta.webp', alt: 'Rodillera puesta en pierna en movimiento', title: 'En acción' },
+  { id: 'slide-4', type: 'img', src: '/assets/detalle-gel.webp', alt: 'Almohadilla de gel anatómica para rótula', title: 'Gel rótula' },
+  { id: 'slide-5', type: 'img', src: '/assets/detalle-resortes.webp', alt: 'Detalle de resortes flexibles laterales', title: 'Resortes' },
+];
+---
+<section id="hero" class="relative pt-6 pb-12 md:py-12 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      
+      {/* Columna Izquierda: Galería scroll-snap sin JS */}
+      <div class="lg:col-span-6 space-y-4">
+        {/* Contenedor principal con scroll-snap */}
+        <div class="relative w-full aspect-square bg-[var(--color-niebla)] rounded-3xl overflow-hidden border border-[var(--color-borde)] shadow-sm">
+          
+          {/* Badge de Descuento */}
+          <div class="absolute top-4 left-4 z-20">
+            <span class="bg-[var(--color-oferta)] text-white font-black text-sm px-3 py-1 rounded-full shadow-sm tracking-wide">
+              -42 %
+            </span>
+          </div>
+
+          {/* Carrusel con snap scroll puro en CSS */}
+          <div 
+            class="w-full h-full flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
+            id="galeria-hero"
+            tabindex="0"
+            aria-label="Galería de imágenes del producto"
+          >
+            {/* Slide 1: Video demostración vertical */}
+            <div id="slide-video" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center bg-black">
+              <video
+                controls
+                playsinline
+                preload="metadata"
+                poster="/assets/video-poster.webp"
+                class="w-full h-full object-contain"
+                aria-label="Demostración de rodillera deportiva de compresión"
+              >
+                <source src="/assets/demostracion-rodillera.mp4" type="video/mp4" />
+                Tu navegador no soporta video HTML5.
+              </video>
+              <div class="absolute bottom-4 left-4 right-4 pointer-events-none text-center bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-xl">
+                <span class="text-xs text-white font-medium">Demostración en video · Ajuste y movimiento</span>
+              </div>
+            </div>
+
+            {/* Slide 2: Frente (LCP crítico) */}
+            <div id="slide-1" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
+              <img
+                src="/assets/hero-clasica.webp"
+                alt="Rodillera deportiva de compresión vista frontal con gel en la rótula"
+                width={800}
+                height={800}
+                fetchpriority="high"
+                loading="eager"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Slide 3: De lado */}
+            <div id="slide-2" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
+              <img
+                src="/assets/clasica-lateral.webp"
+                alt="Estabilizadores laterales de resorte vista de lado"
+                width={800}
+                height={800}
+                loading="lazy"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Slide 4: Puesta corriendo */}
+            <div id="slide-3" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
+              <img
+                src="/assets/clasica-puesta.webp"
+                alt="Rodillera de compresión puesta corriendo"
+                width={800}
+                height={800}
+                loading="lazy"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Slide 5: Detalle gel */}
+            <div id="slide-4" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
+              <img
+                src="/assets/detalle-gel.webp"
+                alt="Almohadilla de gel anatómica en la rótula"
+                width={600}
+                height={600}
+                loading="lazy"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Slide 6: Detalle resortes */}
+            <div id="slide-5" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
+              <img
+                src="/assets/detalle-resortes.webp"
+                alt="Estabilizadores laterales con resortes de soporte"
+                width={600}
+                height={600}
+                loading="lazy"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Miniaturas en carrusel horizontal */}
+        <div class="flex items-center gap-2.5 overflow-x-auto pb-2 no-scrollbar">
+          {slides.map((s, idx) => (
+            <a
+              href={`#${s.id}`}
+              class="w-16 h-16 rounded-xl overflow-hidden border-2 border-[var(--color-borde)] hover:border-[var(--color-teal)] focus:border-[var(--color-teal)] shrink-0 bg-[var(--color-niebla)] relative transition-all"
+              aria-label={`Ver diapositiva ${idx + 1}: ${s.title}`}
+            >
+              {s.type === 'video' ? (
+                <div class="w-full h-full bg-[var(--color-grafito)] flex flex-col items-center justify-center text-white">
+                  <svg class="w-5 h-5 text-[var(--color-cta)]" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                  <span class="text-[9px] font-bold mt-0.5">Video</span>
+                </div>
+              ) : (
+                <img
+                  src={s.src}
+                  alt={s.alt}
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              )}
+            </a>
+          ))}
+        </div>
+
+        {/* Aviso visible de producto deportivo obligatorio */}
+        <div class="bg-[var(--color-niebla)] rounded-2xl p-3.5 border border-[var(--color-borde)] text-[11px] text-[var(--color-gris)] leading-relaxed">
+          <strong class="text-[var(--color-tinta)] font-semibold block mb-0.5">Aviso al comprador:</strong>
+          {tiendaConfig.avisoLegalSalud}
+        </div>
+      </div>
+
+      {/* Columna Derecha: Copy, Propuesta de Valor & Isla OrderSelector */}
+      <div class="lg:col-span-6 space-y-6">
+        {/* Rating social proof */}
+        <div class="flex items-center gap-2 flex-wrap">
+          <div class="flex items-center text-amber-500">
+            {Array.from({ length: 5 }).map((_) => (
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-extrabold text-xs text-[var(--color-tinta)]">4,8 de 5</span>
+          <span class="text-xs text-[var(--color-gris)]">(2.340 clientes satisfechos en Colombia)</span>
+        </div>
+
+        {/* Titular H1 y Subtítulo */}
+        <div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[var(--color-tinta)] tracking-tight leading-[1.1]">
+            Muévete con la rodilla firme
+          </h1>
+          <p class="text-base sm:text-lg text-[var(--color-gris)] mt-3 leading-relaxed">
+            Rodillera de compresión con gel en la rótula y estabilizadores laterales. No se baja ni se enrolla.
+          </p>
+        </div>
+
+        {/* 3 Bullets de Valor Principal */}
+        <div class="space-y-2.5 py-1">
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-[var(--color-exito)] flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="text-sm font-semibold text-[var(--color-tinta)]">
+              Soporte lateral con resortes de flexión guiada
+            </span>
+          </div>
+
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-[var(--color-exito)] flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="text-sm font-semibold text-[var(--color-tinta)]">
+              Almohadilla de gel anatómica que abraza y centra la rótula
+            </span>
+          </div>
+
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 text-[var(--color-exito)] flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="text-sm font-semibold text-[var(--color-tinta)]">
+              Tejido air knit transpirable que respira todo el día
+            </span>
+          </div>
+        </div>
+
+        {/* Isla OrderSelector */}
+        <div id="hero-selector">
+          <OrderSelector client:visible proActivo={tiendaConfig.modeloPro.activo} />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

@@ -1,0 +1,74 @@
+---
+import { tiendaConfig } from '../../config/tienda';
+---
+<footer class="bg-[var(--color-grafito)] text-white border-t border-gray-800 pt-12 pb-24 md:pb-12 text-xs">
+  <div class="max-w-6xl mx-auto px-4 space-y-8">
+    
+    {/* Aviso deportivo obligatorio en el footer */}
+    <div class="bg-gray-800/80 rounded-2xl p-4 sm:p-5 border border-gray-700 leading-relaxed text-gray-300">
+      <strong class="text-white block mb-1">Aviso legal y de responsabilidad:</strong>
+      {tiendaConfig.avisoLegalSalud}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      {/* Información de Tienda */}
+      <div class="md:col-span-5 space-y-2">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-[var(--color-teal)] flex items-center justify-center text-white font-black text-sm">
+            V
+          </div>
+          <span class="font-black text-lg tracking-tight text-white">{tiendaConfig.nombreTienda}</span>
+        </div>
+        <p class="text-gray-400 leading-relaxed">
+          Tienda online especializada en artículos deportivos de soporte, estabilidad y compresión para atletas y trabajadores activos en Colombia.
+        </p>
+        <p class="text-gray-400">
+          <strong>Razón Social:</strong> {tiendaConfig.razonSocial} · <strong>NIT:</strong> {tiendaConfig.nit}
+        </p>
+      </div>
+
+      {/* Enlaces Legales */}
+      <div class="md:col-span-4 space-y-2">
+        <h4 class="font-bold text-white uppercase tracking-wider text-[11px]">Políticas y Condiciones</h4>
+        <ul class="space-y-1.5 text-gray-300">
+          <li>
+            <a href="/envios" class="hover:text-[var(--color-teal)] transition-colors underline-offset-4 hover:underline">
+              Tiempos y condiciones de envío
+            </a>
+          </li>
+          <li>
+            <a href="/cambios-y-devoluciones" class="hover:text-[var(--color-teal)] transition-colors underline-offset-4 hover:underline">
+              Cambios de talla y retracto (Ley 1480 de 2011)
+            </a>
+          </li>
+          <li>
+            <a href="/privacidad" class="hover:text-[var(--color-teal)] transition-colors underline-offset-4 hover:underline">
+              Política de privacidad y datos (Ley 1581 de 2012)
+            </a>
+          </li>
+          <li>
+            <a href="/terminos" class="hover:text-[var(--color-teal)] transition-colors underline-offset-4 hover:underline">
+              Términos y condiciones del servicio
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Atención y Confirmación de Pedidos */}
+      <div class="md:col-span-3 space-y-2">
+        <h4 class="font-bold text-white uppercase tracking-wider text-[11px]">Horario de Despacho</h4>
+        <p class="text-gray-400 leading-relaxed">
+          {tiendaConfig.pedido.horarioConfirmacion}
+        </p>
+        <p class="text-gray-400 leading-relaxed">
+          Tiempo promedio de contacto: <strong>{tiendaConfig.pedido.tiempoConfirmacion}</strong> tras recibir tu orden contraentrega.
+        </p>
+      </div>
+    </div>
+
+    {/* Copyright */}
+    <div class="pt-6 border-t border-gray-800 text-center text-gray-500 text-[11px]">
+      <p>© {new Date().getFullYear()} {tiendaConfig.nombreTienda}. Todos los derechos reservados. Colombia.</p>
+    </div>
+  </div>
+</footer>

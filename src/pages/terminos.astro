@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/secciones/Header.astro';
+import Footer from '../components/secciones/Footer.astro';
+import { tiendaConfig } from '../config/tienda';
+---
+<Base title={`Términos y Condiciones del Servicio | ${tiendaConfig.nombreTienda}`}>
+  <Header />
+  <main class="py-12 md:py-16 bg-[var(--color-niebla)]">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border border-[var(--color-borde)] shadow-sm space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-[var(--color-teal)]">Condiciones de Uso</span>
+          <h1 class="text-3xl font-black text-[var(--color-tinta)] mt-1">Términos y Condiciones de Compra</h1>
+          <p class="text-xs text-[var(--color-gris)] mt-1">Vigentes para la República de Colombia</p>
+        </div>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">1. Aceptación y Modalidad Contraentrega</h2>
+          <p>
+            Al diligenciar y enviar el formulario de pedido en nuestro sitio web, el usuario manifiesta su intención de adquirir el producto seleccionado bajo la modalidad de pago contraentrega en efectivo en Colombia.
+          </p>
+          <p>
+            La orden queda formalmente confirmada una vez nuestro equipo establezca contacto telefónico o por mensajería con el cliente para validar la dirección física y la disponibilidad para recibir al transportador.
+          </p>
+        </section>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">2. Compromiso de Recepción</h2>
+          <p>
+            Dado que los costos de flete de ida y seguro son asumidos por nuestra tienda para brindarle envío gratuito, solicitamos al comprador asegurar la presencia de una persona mayor de edad con el dinero en efectivo en el lugar de entrega durante el periodo estimado de entrega (2 a 5 días hábiles).
+          </p>
+        </section>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">3. Naturaleza del Producto y Descargo Deportivo</h2>
+          <p>
+            {tiendaConfig.avisoLegalSalud}
+          </p>
+          <p>
+            La información provista en esta página tiene propósitos exclusivamente informativos sobre las características de soporte y compresión deportiva y no constituye asesoría médica, prescripción facultativa ni diagnóstico terapéutico.
+          </p>
+        </section>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">4. Precios y Moneda</h2>
+          <p>
+            Todos los precios publicados en este sitio web están expresados en pesos colombianos (COP) e incluyen todos los tributos aplicables y el costo de despacho a domicilio en territorio colombiano.
+          </p>
+        </section>
+
+        <section class="space-y-3 text-sm text-[var(--color-gris)] leading-relaxed">
+          <h2 class="text-lg font-bold text-[var(--color-tinta)]">5. Legislación Aplicable</h2>
+          <p>
+            Estos términos se rigen e interpretan conforme a las leyes de la República de Colombia. Cualquier controversia será dirimida ante las autoridades competentes en territorio colombiano.
+          </p>
+        </section>
+
+        <div class="pt-4 border-t border-[var(--color-borde)]">
+          <a href="/" class="text-xs font-bold text-[var(--color-teal)] hover:underline flex items-center gap-1">
+            ← Volver a la página principal
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>

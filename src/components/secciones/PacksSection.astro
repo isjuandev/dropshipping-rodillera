@@ -1,0 +1,20 @@
+---
+import PackSelector from '../islas/PackSelector';
+---
+<section id="packs" class="py-16 md:py-20 bg-[var(--color-niebla)] section-animate">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <span class="text-xs font-bold uppercase tracking-wider text-[var(--color-teal)] bg-sky-50 border border-sky-200 px-3 py-1 rounded-full">
+        Paquetes con Descuento
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[var(--color-tinta)] mt-3">
+        Elige tu paquete y ahorra más
+      </h2>
+      <p class="text-sm md:text-base text-[var(--color-gris)] mt-2">
+        Aprovecha precios especiales en el par o para equipar a tu compañero de entrenamiento.
+      </p>
+    </div>
+
+    <PackSelector client:visible />
+  </div>
+</section>

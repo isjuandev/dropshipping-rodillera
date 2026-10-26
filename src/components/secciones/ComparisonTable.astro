@@ -1,0 +1,149 @@
+---
+const filas = [
+  {
+    caracteristica: 'Soporte lateral con resortes de flexión',
+    flexi: true,
+    comun: false,
+    venda: false,
+  },
+  {
+    caracteristica: 'Almohadilla de gel anatómica para la rótula',
+    flexi: true,
+    comun: false,
+    venda: false,
+  },
+  {
+    caracteristica: 'Tiras antideslizantes (no se baja ni se enrolla)',
+    flexi: true,
+    comun: false,
+    venda: false,
+  },
+  {
+    caracteristica: 'Tejido air knit transpirable (evita sudor acumulado)',
+    flexi: true,
+    comun: false,
+    venda: false,
+  },
+  {
+    caracteristica: 'Se coloca en menos de 10 segundos',
+    flexi: true,
+    comun: true,
+    venda: false,
+  },
+  {
+    caracteristica: 'Lavable a mano sin perder elasticidad',
+    flexi: true,
+    comun: true,
+    venda: false,
+  },
+];
+---
+<section class="py-16 md:py-20 bg-white section-animate">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <span class="text-xs font-bold uppercase tracking-wider text-[var(--color-teal)] bg-sky-50 border border-sky-200 px-3 py-1 rounded-full">
+        Comparativa Clara
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[var(--color-tinta)] mt-3">
+        Por qué elegir FlexiKnee
+      </h2>
+      <p class="text-sm md:text-base text-[var(--color-gris)] mt-2">
+        Compara las características técnicas frente a otras opciones convencionales.
+      </p>
+    </div>
+
+    <!-- Tabla Comparativa -->
+    <div class="border border-[var(--color-borde)] rounded-3xl overflow-hidden shadow-sm bg-white">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[540px]">
+          <thead>
+            <tr class="border-b border-[var(--color-borde)]">
+              <th class="p-4 sm:p-5 text-xs sm:text-sm font-bold text-[var(--color-gris)] w-1/2">
+                Característica técnica
+              </th>
+              <!-- Columna Destacada -->
+              <th class="p-4 sm:p-5 text-center bg-sky-50/80 border-x border-[var(--color-teal)]/30 w-1/6">
+                <span class="block text-sm sm:text-base font-black text-[var(--color-teal)]">FlexiKnee</span>
+                <span class="text-[10px] text-sky-700 font-semibold uppercase tracking-wider">Recomendada</span>
+              </th>
+              <th class="p-4 sm:p-5 text-center text-xs sm:text-sm font-bold text-[var(--color-gris)] w-1/6">
+                Tela común
+              </th>
+              <th class="p-4 sm:p-5 text-center text-xs sm:text-sm font-bold text-[var(--color-gris)] w-1/6">
+                Venda elástica
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--color-borde)] text-xs sm:text-sm">
+            {filas.map((fila) => (
+              <tr class="hover:bg-gray-50/50 transition-colors">
+                <td class="p-4 sm:p-5 font-semibold text-[var(--color-tinta)]">
+                  {fila.caracteristica}
+                </td>
+                
+                {/* Columna FlexiKnee */}
+                <td class="p-4 sm:p-5 text-center bg-sky-50/40 border-x border-[var(--color-teal)]/20">
+                  <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-[var(--color-exito)] shadow-2xs">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </td>
+
+                {/* Columna Tela Común */}
+                <td class="p-4 sm:p-5 text-center">
+                  {fila.comun ? (
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-50 text-emerald-600">
+                      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  ) : (
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 text-gray-400">
+                      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  )}
+                </td>
+
+                {/* Columna Venda Elástica */}
+                <td class="p-4 sm:p-5 text-center">
+                  {fila.venda ? (
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-50 text-emerald-600">
+                      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  ) : (
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 text-gray-400">
+                      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {/* CTA debajo de la comparativa */}
+    <div class="mt-8 text-center">
+      <a
+        href="#pedido"
+        class="btn-cta inline-flex items-center justify-center gap-2 px-8 h-14 bg-[var(--color-cta)] hover:bg-[var(--color-cta-hover)] text-[var(--color-tinta)] font-black text-base sm:text-lg rounded-[14px] shadow-md transition-all active:scale-[0.98]"
+      >
+        <span>Elegir mi rodillera con pago contraentrega</span>
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+      <p class="text-xs text-[var(--color-gris)] mt-2">
+        Pagas en efectivo al recibir en tu casa o trabajo · Envío gratis
+      </p>
+    </div>
+  </div>
+</section>

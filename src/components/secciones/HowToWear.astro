@@ -1,0 +1,83 @@
+---
+const pasos = [
+  {
+    num: '1',
+    titulo: 'Mide tu contorno',
+    desc: 'Usa una cinta métrica sobre el centro de la rótula con la pierna extendida y elige tu talla adecuada.',
+    img: '/assets/paso-1.webp',
+  },
+  {
+    num: '2',
+    titulo: 'Desliza y centra',
+    desc: 'Sube la rodillera jalando desde los extremos hasta que la almohadilla de gel abrace perfectamente la rótula.',
+    img: '/assets/paso-2.webp',
+  },
+  {
+    num: '3',
+    titulo: 'Ajusta y muévete',
+    desc: 'Asegúrate de que las tiras antideslizantes superiores queden planas sobre la piel y comienza tu actividad.',
+    img: '/assets/paso-3.webp',
+  },
+];
+---
+<section class="py-16 md:py-20 bg-white section-animate">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs font-bold uppercase tracking-wider text-[var(--color-teal)] bg-sky-50 border border-sky-200 px-3 py-1 rounded-full">
+        Fácil y Rápido
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[var(--color-tinta)] mt-3">
+        Cómo se pone en tres pasos
+      </h2>
+      <p class="text-sm md:text-base text-[var(--color-gris)] mt-2">
+        En menos de un minuto estás listo para entrenar con total comodidad.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {pasos.map((paso) => (
+        <div class="bg-[var(--color-niebla)] rounded-3xl p-6 border border-[var(--color-borde)] flex flex-col justify-between shadow-xs">
+          <div>
+            <div class="relative w-full aspect-[3/2] rounded-2xl overflow-hidden bg-white mb-5 border border-[var(--color-borde)]">
+              <img
+                src={paso.img}
+                alt={`Paso ${paso.num}: ${paso.titulo}`}
+                width={600}
+                height={400}
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+              <span class="absolute top-3 left-3 w-8 h-8 rounded-full bg-[var(--color-grafito)] text-white font-black text-sm flex items-center justify-center shadow-xs">
+                {paso.num}
+              </span>
+            </div>
+            <h3 class="font-extrabold text-lg text-[var(--color-tinta)] mb-2">
+              {paso.titulo}
+            </h3>
+            <p class="text-xs sm:text-sm text-[var(--color-gris)] leading-relaxed">
+              {paso.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Nota adicional para el modelo Pro */}
+    <div class="mt-8 max-w-3xl mx-auto bg-sky-50 border border-sky-200 rounded-2xl p-4 sm:p-5 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-xl bg-[var(--color-teal)] text-white flex items-center justify-center shrink-0">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 3" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm text-[var(--color-tinta)]">
+          Si elegiste la versión Pro con ajuste giratorio:
+        </h4>
+        <p class="text-xs sm:text-sm text-[var(--color-gris)] mt-0.5">
+          Una vez puesta la rodillera, gira la perilla lateral en el sentido de las manecillas del reloj hasta sentir el nivel de compresión exacto que buscas. Para soltarla, solo levanta la perilla con un suave toque hacia afuera.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

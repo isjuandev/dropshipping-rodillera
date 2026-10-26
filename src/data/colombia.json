@@ -1,0 +1,103 @@
+{
+  "Amazonas": ["Leticia", "Puerto Nariño"],
+  "Antioquia": [
+    "Medellín", "Abejorral", "Amagá", "Amalfi", "Andes", "Apartadó", "Arboletes", "Barbosa", "Bello", "Betania",
+    "Caldas", "Carepa", "Caucasia", "Chigorodó", "Ciudad Bolívar", "Copacabana", "El Bagre", "El Carmen de Viboral",
+    "El Santuario", "Envigado", "Girardota", "Guarne", "Itagüí", "La Ceja", "La Estrella", "Marinilla", "Necoclí",
+    "Puerto Berrío", "Rionegro", "Sabaneta", "Santa Bárbara", "Santa Fe de Antioquia", "Santa Rosa de Osos", "Segovia",
+    "Sonsón", "Tarazá", "Turbo", "Urrao", "Yarumal", "Yolombó"
+  ],
+  "Arauca": ["Arauca", "Arauquita", "Fortul", "Saravena", "Tame"],
+  "Atlántico": [
+    "Barranquilla", "Baranoa", "Campo de la Cruz", "Galapa", "Luruaco", "Malambo", "Manatí", "Palmar de Varela",
+    "Polonuevo", "Ponedera", "Puerto Colombia", "Repelón", "Sabanagrande", "Sabanalarga", "Santo Tomás", "Soledad", "Usiacurí"
+  ],
+  "Bogotá D.C.": ["Bogotá D.C."],
+  "Bolívar": [
+    "Cartagena", "Achí", "Altos del Rosario", "Arenal", "Arjona", "Arroyohondo", "Calamar", "Carmen de Bolívar",
+    "Magangué", "Mahates", "Mompós", "Morales", "San Jacinto", "San Juan Nepomuceno", "Simití", "Turbaco", "Turbaná"
+  ],
+  "Boyacá": [
+    "Tunja", "Chiquinquirá", "Duitama", "Garagoa", "Guateque", "Moniquirá", "Nobsa", "Paipa", "Puerto Boyacá",
+    "Samacá", "Santa Rosa de Viterbo", "Soatá", "Sogamoso", "Tenza", "Villa de Leyva"
+  ],
+  "Caldas": [
+    "Manizales", "Aguadas", "Anserma", "Chinchiná", "La Dorada", "Neira", "Pensilvania", "Riosucio", "Salamina",
+    "Villamaría", "Viterbo"
+  ],
+  "Caquetá": ["Florencia", "Cartagena del Chairá", "Curillo", "El Doncello", "Paujil", "Puerto Rico", "San Vicente del Caguán"],
+  "Casanare": ["Yopal", "Aguazul", "Maní", "Monterrey", "Paz de Ariporo", "Tauramena", "Trinidad", "Villanueva"],
+  "Cauca": [
+    "Popayán", "Bolívar", "Buenos Aires", "Caloto", "Corinto", "El Tambo", "Guapi", "Miranda", "Patía",
+    "Piendamó", "Puerto Tejada", "Santander de Quilichao", "Silvia", "Timbío"
+  ],
+  "Cesar": [
+    "Valledupar", "Aguachica", "Agustín Codazzi", "Bosconia", "Curumaní", "El Copey", "El Paso", "La Jagua de Ibirico",
+    "La Paz", "Pailitas", "Pelaya", "San Alberto", "San Diego", "San Martín"
+  ],
+  "Chocó": ["Quibdó", "Acandí", "Bahía Solano", "Condoto", "Istmina", "Nuquí", "Riosucio", "Tadó"],
+  "Córdoba": [
+    "Montería", "Ayapel", "Cereté", "Chinú", "Ciénaga de Oro", "Lorica", "Montelíbano", "Planeta Rica",
+    "Pueblo Nuevo", "Sahagún", "San Andrés de Sotavento", "San Antero", "Tierralta", "Valencia"
+  ],
+  "Cundinamarca": [
+    "Agua de Dios", "Anapoima", "Arbeláez", "Cachipay", "Cajicá", "Chía", "Choachí", "Chocontá", "Cogua",
+    "Cota", "El Colegio", "Facatativá", "Funza", "Fusagasugá", "Gachancipá", "Girardot", "Guaduas", "Guatavita",
+    "La Calera", "La Mesa", "Madrid", "Mosquera", "Nemocón", "Pacho", "Ricaurte", "San Antonio del Tequendama",
+    "Sesquilé", "Sibaté", "Silvania", "Simijaca", "Soacha", "Sopó", "Subachoque", "Suesca", "Tabio", "Tenjo",
+    "Tocancipá", "Ubaté", "Villeta", "Zipaquirá"
+  ],
+  "Guainía": ["Inírida"],
+  "Guaviare": ["San José del Guaviare", "Calamar", "El Retorno"],
+  "Huila": [
+    "Neiva", "Acevedo", "Aipe", "Algeciras", "Campoalegre", "Garzón", "Gigante", "Guadalupe", "Isnos",
+    "La Plata", "Palermo", "Pitalito", "Rivera", "San Agustín", "Tarqui", "Timaná"
+  ],
+  "La Guajira": [
+    "Riohacha", "Albania", "Barrancas", "Dibulla", "Distracción", "El Molino", "Fonseca", "Hatonuevo",
+    "La Jagua del Pilar", "Maicao", "Manaure", "San Juan del Cesar", "Uribia", "Urumita", "Villanueva"
+  ],
+  "Magdalena": [
+    "Santa Marta", "Aracataca", "Ciénaga", "El Banco", "Fundación", "Pivijay", "Plato", "Puebloviejo",
+    "Salamina", "San Sebastián de Buenavista", "Sitionuevo", "Zona Bananera"
+  ],
+  "Meta": [
+    "Villavicencio", "Acacías", "Castilla la Nueva", "Cumaral", "Granada", "Guamal", "La Macarena",
+    "Puerto Concordia", "Puerto Gaitán", "Puerto López", "Puerto Lleras", "Puerto Rico", "Restrepo", "San Martín"
+  ],
+  "Nariño": [
+    "Pasto", "Barbacoas", "Buesaco", "Chachagüí", "Consacá", "Cumbal", "El Charco", "El Tambo", "Guaitarilla",
+    "Ipiales", "La Florida", "La Unión", "Olaya Herrera", "Ricaurte", "Samaniego", "Sandoná", "San Pablo",
+    "Taminango", "Túquerres", "Tumaco"
+  ],
+  "Norte de Santander": [
+    "Cúcuta", "Ábrego", "Chinácota", "Convención", "El Carmen", "El Zulia", "Los Patios", "Ocaña",
+    "Pamplona", "Pamplonita", "San Cayetano", "Sardinata", "Tibú", "Villa del Rosario"
+  ],
+  "Putumayo": ["Mocoa", "Colón", "Orito", "Puerto Asís", "Puerto Caicedo", "Puerto Guzmán", "Puerto Leguízamo", "San Francisco", "San Miguel", "Santiago", "Sibundoy", "Valle del Guamuez", "Villagarzón"],
+  "Quindío": ["Armenia", "Buenavista", "Calarcá", "Circasia", "Córdoba", "Filandia", "Génova", "La Tebaida", "Montenegro", "Pijao", "Quimbaya", "Salento"],
+  "Risaralda": ["Pereira", "Apía", "Balboa", "Belén de Umbría", "Dosquebradas", "Guática", "La Celia", "La Virginia", "Marsella", "Mistrató", "Pueblo Rico", "Quinchía", "Santa Rosa de Cabal", "Santuario"],
+  "San Andrés y Providencia": ["San Andrés", "Providencia"],
+  "Santander": [
+    "Bucaramanga", "Barbosa", "Barichara", "Barrancabermeja", "Charalá", "Cimitarra", "Curití", "El Socorro",
+    "Floridablanca", "Girón", "Lebrija", "Málaga", "Piedecuesta", "Puente Nacional", "Puerto Wilches", "Rionegro",
+    "Sabana de Torres", "San Gil", "San Vicente de Chucurí", "Socorro", "Vélez", "Zapatoca"
+  ],
+  "Sucre": [
+    "Sincelejo", "Corozal", "Coveñas", "Majagual", "Morroa", "Ovejas", "Sampués", "San Benito Abad",
+    "San Marcos", "San Onofre", "San Pedro", "Santiago de Tolú", "Sincé", "Tolú Viejo"
+  ],
+  "Tolima": [
+    "Ibagué", "Alpujarra", "Armero Guayabal", "Cajamarca", "Chaparral", "Espinal", "Flandes", "Fresno",
+    "Guamo", "Honda", "Lérida", "Líbano", "Mariquita", "Melgar", "Natagaima", "Planadas", "Purificación",
+    "Rovira", "Saldaña", "San Antonio"
+  ],
+  "Valle del Cauca": [
+    "Cali", "Alcalá", "Andalucía", "Ansermanuevo", "Argelia", "Bolívar", "Buenaventura", "Buga", "Bugalagrande",
+    "Caicedonia", "Candelaria", "Cartago", "Dagua", "El Cerrito", "El Dovio", "Florida", "Ginebra", "Guacarí",
+    "Jamundí", "La Cumbre", "La Unión", "La Victoria", "Obando", "Palmira", "Pradera", "Restrepo", "Riofrío",
+    "Roldanillo", "San Pedro", "Sevilla", "Toro", "Trujillo", "Tuluá", "Ulloa", "Versalles", "Vijes", "Yotoco", "Yumbo", "Zarzal"
+  ],
+  "Vaupés": ["Mitú", "Carurú", "Taraira"],
+  "Vichada": ["Puerto Carreño", "Cumaribo", "La Primavera", "Santa Rosalía"]
+}
