@@ -15,19 +15,50 @@ const slides = [
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
       
-      {/* Columna Izquierda: Galería scroll-snap sin JS */}
+      {/* Columna Izquierda: Galería interactiva (slider) */}
       <div class="lg:col-span-6 space-y-4">
-        {/* Contenedor principal con scroll-snap */}
-        <div class="relative w-full aspect-square bg-[var(--color-niebla)] rounded-3xl overflow-hidden border border-[var(--color-borde)] shadow-sm">
+        {/* Contenedor principal con slider */}
+        <div class="relative w-full aspect-square bg-[var(--color-niebla)] rounded-3xl overflow-hidden border border-[var(--color-borde)] shadow-sm group">
           
           {/* Badge de Descuento */}
-          <div class="absolute top-4 left-4 z-20">
+          <div class="absolute top-4 left-4 z-20 pointer-events-none">
             <span class="bg-[var(--color-oferta)] text-white font-black text-sm px-3 py-1 rounded-full shadow-sm tracking-wide">
               -42 %
             </span>
           </div>
 
-          {/* Carrusel con snap scroll puro en CSS */}
+          {/* Flecha Anterior */}
+          <button
+            type="button"
+            id="galeria-prev"
+            class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-[var(--color-tinta)] border border-[var(--color-borde)] shadow-md flex items-center justify-center transition-all z-20 cursor-pointer hover:scale-105 active:scale-95 backdrop-blur-xs opacity-90 hover:opacity-100"
+            aria-label="Foto anterior"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+
+          {/* Flecha Siguiente */}
+          <button
+            type="button"
+            id="galeria-next"
+            class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-[var(--color-tinta)] border border-[var(--color-borde)] shadow-md flex items-center justify-center transition-all z-20 cursor-pointer hover:scale-105 active:scale-95 backdrop-blur-xs opacity-90 hover:opacity-100"
+            aria-label="Siguiente foto"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+
+          {/* Indicador contador de slides */}
+          <div class="absolute bottom-3 right-3 z-20 pointer-events-none">
+            <span id="slide-indicator" class="bg-black/60 text-white text-[11px] font-bold px-2.5 py-1 rounded-full backdrop-blur-xs select-none">
+              1 / {slides.length}
+            </span>
+          </div>
+
+          {/* Carrusel contenedor de slides */}
           <div 
             class="w-full h-full flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
             id="galeria-hero"
@@ -35,8 +66,9 @@ const slides = [
             aria-label="Galería de imágenes del producto"
           >
             {/* Slide 1: Video demostración vertical */}
-            <div id="slide-video" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center bg-black">
+            <div id="slide-video" class="hero-slide w-full h-full shrink-0 snap-center relative flex items-center justify-center bg-black">
               <video
+                id="hero-video-player"
                 controls
                 playsinline
                 preload="metadata"
@@ -47,13 +79,10 @@ const slides = [
                 <source src="/assets/demostracion-rodillera.mp4" type="video/mp4" />
                 Tu navegador no soporta video HTML5.
               </video>
-              <div class="absolute bottom-4 left-4 right-4 pointer-events-none text-center bg-black/60 backdrop-blur-xs py-1.5 px-3 rounded-xl">
-                <span class="text-xs text-white font-medium">Demostración en video · Ajuste y movimiento</span>
-              </div>
             </div>
 
             {/* Slide 2: Frente (LCP crítico) */}
-            <div id="slide-1" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
+            <div id="slide-1" class="hero-slide w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
               <img
                 src="/assets/hero-clasica.webp"
                 alt="Rodillera deportiva de compresión vista frontal con gel en la rótula"
@@ -66,7 +95,7 @@ const slides = [
             </div>
 
             {/* Slide 3: De lado */}
-            <div id="slide-2" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
+            <div id="slide-2" class="hero-slide w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
               <img
                 src="/assets/clasica-lateral.webp"
                 alt="Estabilizadores laterales de resorte vista de lado"
@@ -78,7 +107,7 @@ const slides = [
             </div>
 
             {/* Slide 4: Puesta corriendo */}
-            <div id="slide-3" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
+            <div id="slide-3" class="hero-slide w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
               <img
                 src="/assets/clasica-puesta.webp"
                 alt="Rodillera de compresión puesta corriendo"
@@ -90,7 +119,7 @@ const slides = [
             </div>
 
             {/* Slide 5: Detalle gel */}
-            <div id="slide-4" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
+            <div id="slide-4" class="hero-slide w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
               <img
                 src="/assets/detalle-gel.webp"
                 alt="Almohadilla de gel anatómica en la rótula"
@@ -102,7 +131,7 @@ const slides = [
             </div>
 
             {/* Slide 6: Detalle resortes */}
-            <div id="slide-5" class="w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
+            <div id="slide-5" class="hero-slide w-full h-full shrink-0 snap-center relative flex items-center justify-center p-4">
               <img
                 src="/assets/detalle-resortes.webp"
                 alt="Estabilizadores laterales con resortes de soporte"
@@ -115,12 +144,17 @@ const slides = [
           </div>
         </div>
 
-        {/* Miniaturas en carrusel horizontal */}
-        <div class="flex items-center gap-2.5 overflow-x-auto pb-2 no-scrollbar">
+        {/* Miniaturas en carrusel horizontal con botones (sin scroll de página) */}
+        <div class="flex items-center gap-2.5 overflow-x-auto pb-2 no-scrollbar" id="thumbnail-container">
           {slides.map((s, idx) => (
-            <a
-              href={`#${s.id}`}
-              class="w-16 h-16 rounded-xl overflow-hidden border-2 border-[var(--color-borde)] hover:border-[var(--color-teal)] focus:border-[var(--color-teal)] shrink-0 bg-[var(--color-niebla)] relative transition-all"
+            <button
+              type="button"
+              data-slide-index={idx}
+              class={`thumbnail-btn w-16 h-16 rounded-xl overflow-hidden border-2 shrink-0 bg-[var(--color-niebla)] relative transition-all cursor-pointer ${
+                idx === 0
+                  ? 'border-[var(--color-teal)] ring-2 ring-[var(--color-teal)]/30 scale-105 opacity-100'
+                  : 'border-[var(--color-borde)] opacity-70 hover:opacity-100 hover:border-gray-400'
+              }`}
               aria-label={`Ver diapositiva ${idx + 1}: ${s.title}`}
             >
               {s.type === 'video' ? (
@@ -137,10 +171,10 @@ const slides = [
                   width={64}
                   height={64}
                   loading="lazy"
-                  class="w-full h-full object-cover"
+                  class="w-full h-full object-cover pointer-events-none"
                 />
               )}
-            </a>
+            </button>
           ))}
         </div>
 
@@ -231,3 +265,113 @@ const slides = [
     scrollbar-width: none;
   }
 </style>
+
+<script>
+  function setupGallery() {
+    const galeria = document.getElementById('galeria-hero');
+    const slides = galeria ? Array.from(galeria.querySelectorAll<HTMLElement>('.hero-slide')) : [];
+    const thumbnails = Array.from(document.querySelectorAll<HTMLButtonElement>('.thumbnail-btn'));
+    const prevBtn = document.getElementById('galeria-prev');
+    const nextBtn = document.getElementById('galeria-next');
+    const indicator = document.getElementById('slide-indicator');
+    const videoPlayer = document.getElementById('hero-video-player') as HTMLVideoElement | null;
+    const thumbnailContainer = document.getElementById('thumbnail-container');
+
+    if (!galeria || slides.length === 0) return;
+
+    let currentIndex = 0;
+
+    function updateActiveState(index: number) {
+      currentIndex = index;
+
+      thumbnails.forEach((thumb, idx) => {
+        if (idx === index) {
+          thumb.classList.add('border-[var(--color-teal)]', 'ring-2', 'ring-[var(--color-teal)]/30', 'scale-105', 'opacity-100');
+          thumb.classList.remove('border-[var(--color-borde)]', 'opacity-70');
+
+          if (thumbnailContainer) {
+            const thumbLeft = thumb.offsetLeft;
+            const thumbWidth = thumb.offsetWidth;
+            const containerScroll = thumbnailContainer.scrollLeft;
+            const containerWidth = thumbnailContainer.clientWidth;
+            if (thumbLeft < containerScroll || thumbLeft + thumbWidth > containerScroll + containerWidth) {
+              thumbnailContainer.scrollTo({
+                left: thumbLeft - containerWidth / 2 + thumbWidth / 2,
+                behavior: 'smooth',
+              });
+            }
+          }
+        } else {
+          thumb.classList.remove('border-[var(--color-teal)]', 'ring-2', 'ring-[var(--color-teal)]/30', 'scale-105', 'opacity-100');
+          thumb.classList.add('border-[var(--color-borde)]', 'opacity-70');
+        }
+      });
+
+      if (indicator) {
+        indicator.textContent = `${index + 1} / ${slides.length}`;
+      }
+
+      if (index !== 0 && videoPlayer && !videoPlayer.paused) {
+        videoPlayer.pause();
+      }
+    }
+
+    function scrollToSlide(index: number) {
+      if (!galeria) return;
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+
+      const target = slides[index];
+      if (target) {
+        galeria.scrollTo({
+          left: target.offsetLeft,
+          behavior: 'smooth',
+        });
+      }
+      updateActiveState(index);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollToSlide(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollToSlide(currentIndex + 1);
+      });
+    }
+
+    thumbnails.forEach((thumb, idx) => {
+      thumb.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollToSlide(idx);
+      });
+    });
+
+    let scrollTimeout: any = null;
+    galeria.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const scrollLeft = galeria.scrollLeft;
+        const width = galeria.clientWidth || 1;
+        const newIndex = Math.round(scrollLeft / width);
+        if (newIndex >= 0 && newIndex < slides.length) {
+          updateActiveState(newIndex);
+        }
+      }, 50);
+    }, { passive: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupGallery);
+  } else {
+    setupGallery();
+  }
+</script>
